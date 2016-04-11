@@ -19,3 +19,5 @@
 
 ;; Linux / Windows共通の初期化処理
 (load "common-init")
+;; Linuxでの初期化処理
+(load "linux-init")
