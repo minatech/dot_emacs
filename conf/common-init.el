@@ -189,3 +189,6 @@
 ;; helm関連
 (load "helm-init")
 (load "helm-gtags-init")
+
+;; ELisp関連
+(load "elisp-init")

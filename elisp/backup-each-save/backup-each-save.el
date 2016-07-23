@@ -4,6 +4,7 @@
 
 ;; Author: Benjamin Rutt <brutt@bloomington.in.us>
 ;; Version: 1.4
+;; Package-Version: 20130704.732
 
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -113,7 +114,7 @@ on the system \"/user@host:\"."
 	       (funcall backup-each-save-filter-function bfn)
 	       (or (not backup-each-save-size-limit)
 		   (<= (buffer-size) backup-each-save-size-limit)))
-      (copy-file bfn (backup-each-save-compute-location bfn) t t t))))
+      (copy-file bfn (backup-each-save-compute-location-win bfn) t t t))))
 
 (defun backup-each-save-compute-location (filename)
   (let* ((containing-dir (file-name-directory filename))
@@ -126,6 +127,9 @@ on the system \"/user@host:\"."
       (make-directory backup-container t))
     (format "%s/%s-%s" backup-container basename
 	    (format-time-string backup-each-save-time-format))))
+
+(defun backup-each-save-compute-location-win (filename)
+  (backup-each-save-compute-location (replace-regexp-in-string ":" "$" filename)))
 
 (provide 'backup-each-save)
 ;;; backup-each-save.el ends here

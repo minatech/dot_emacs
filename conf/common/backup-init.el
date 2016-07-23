@@ -1,3 +1,4 @@
+(require 'backup-each-save)
 ;; *.*~のバックアップファイルは作らないようにする
 (setq make-backup-files nil)
 ;; バックアップ先

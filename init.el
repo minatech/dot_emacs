@@ -17,7 +17,12 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+;; Proxy setting
+;; (setq url-proxy-services '(("no_proxy" . "YOUR_NO_PROXY_IP_ADDRESS") ("http" . "YOUR_PROXY_IP_ADDRESS")))
+
 ;; Linux / Windows共通の初期化処理
 (load "common-init")
-;; Linuxでの初期化処理
-(load "linux-init")
+;; ;; Linuxでの初期化処理
+;; (load "linux-init")
+;; Windowsでの初期化処理
+(load "windows-init")
