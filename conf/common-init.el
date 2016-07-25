@@ -190,5 +190,8 @@
 (load "helm-init")
 (load "helm-gtags-init")
 
+;; Doxygen
+(load "doxygen-init")
+
 ;; ELisp関連
 (load "elisp-init")
